@@ -231,8 +231,8 @@ move_number_to_state(Number, ToState) ->
 
 -spec move_phone_number_to_state(knm_phone_number:knm_phone_number(), kz_term:ne_binary()) ->
           knm_phone_number_return().
-move_phone_number_to_state(PN, ToState=?NUMBER_STATE_AVAILABLE) ->
-    knm_phone_number:setters(PN, [{fun knm_phone_number:set_state/2, ToState}]);
+% move_phone_number_to_state(PN, ToState=?NUMBER_STATE_AVAILABLE) ->
+%     knm_phone_number:setters(PN, [{fun knm_phone_number:set_state/2, ToState}]);
 move_phone_number_to_state(PN, ToState) ->
     AssignedTo = knm_phone_number:assigned_to(PN),
     move_phone_number_to_state(PN, ToState, AssignedTo).

@@ -465,6 +465,7 @@ record_call_command(EndpointId, Inception, Data, Call) ->
             ,{<<"Record-Min-Sec">>, kz_term:to_binary(RecordMinSec)}
             ,{<<"Media-Recorder">>, <<"kz_media_recording">>}
             ,{<<"Call-ID">>, CallId}
+            ,{<<"Channels-As-Stereo">>, false}
             ,{<<"Msg-ID">>, kz_binary:rand_hex(16)}
              | kz_api:default_headers(<<"call">>, <<"command">>, ?APP_NAME, ?APP_VERSION)
             ],

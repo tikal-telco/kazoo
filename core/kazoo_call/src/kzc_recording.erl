@@ -703,6 +703,7 @@ start_recording(Call, MediaName, TimeLimit, MediaDocId, SampleRate, RecordMinSec
             ,{<<"Media-Recording-ID">>, MediaDocId}
             ,{<<"Record-Sample-Rate">>, SampleRate}
             ,{<<"Record-Min-Sec">>, kz_term:to_binary(RecordMinSec)}
+            ,{<<"Channels-As-Stereo">>, false}
             ,{<<"Media-Recorder">>, <<"kz_media_recording">>}
             ],
     kapps_call_command:start_record_call(Props, TimeLimit, Call),

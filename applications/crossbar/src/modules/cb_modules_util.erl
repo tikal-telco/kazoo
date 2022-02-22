@@ -337,8 +337,9 @@ handle_normalized_upload(Context, FileJObj, ToExt, {'ok', Contents}) ->
                                     ),
 
     UpdatedContext = cb_context:setters(Context
-                                       ,[{fun cb_context:set_req_files/2, [{<<"original_media">>, FileJObj}
-                                                                          ,{<<"normalized_media">>, NewFileJObj}
+                                       ,[{fun cb_context:set_req_files/2, [
+                                    %    ,[{fun cb_context:set_req_files/2, [{<<"original_media">>, FileJObj}
+                                                                          {<<"normalized_media">>, NewFileJObj}
                                                                           ]
                                          }
                                         ,{fun cb_context:set_doc/2, kz_json:delete_key(<<"normalization_error">>, cb_context:doc(Context))}
